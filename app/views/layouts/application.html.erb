@@ -14,14 +14,13 @@
 <body>
 <div class="navbar navbar-dark bg-dark shadow-sm">
   <div class="container">
-    <a href="#" class="navbar-brand d-flex align-items-center">
-      <strong>To do List</strong>
-    </a>
+    <span class="navbar-brand d-flex align-items-center"><%= link_to "To do List", home_path %></span>
     <% if user_signed_in? %>
       <span>Здравствуйте, <%= current_user.email %></span>
       <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
     <% else %>
-      <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+      <%= link_to 'Войти', new_user_session_path %> или
+      <%= link_to 'Зарегистрироваться', new_user_registration_path %>
     <% end %>
   </div>
 </div>
